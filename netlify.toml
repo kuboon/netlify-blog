@@ -1,0 +1,6 @@
+[Settings]
+ID = "kuboon-blog"
+
+[build]
+command = "rspec spec/site_spec.rb"
+publish = "build/"

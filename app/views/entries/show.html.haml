@@ -1,0 +1,28 @@
+- title, slug = @entry.title.split('//')
+- @ogp[:title] = title
+
+.page-header
+  .pull-right= @entry.created_at.strftime('%Y-%m-%d %H:%M')
+  %h1= title
+
+.content!= render_content @entry
+
+#disqus_thread
+:javascript
+  var disqus_identifier = "#{@entry.uuid}", disqus_url = '#{@disqus_url}';
+  if(typeof DISQUS === "undefined"){
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//trick-with-scrap.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  }else{
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.url = disqus_url;
+        this.page.identifier = disqus_identifier;
+      }
+    });
+  }

@@ -1,0 +1,10 @@
+- @ogp[:title] = 'TOP'
+
+- entries.group_by{|e| e.created_at.year}.each do |year, entries|
+  %h1= year
+  %ul
+    - entries.each do |entry|
+      - title, slug = entry.title, entry.slug
+      %li
+        = entry.created_at.strftime('%m/%d')
+        = link_to title, entry_path(slug)

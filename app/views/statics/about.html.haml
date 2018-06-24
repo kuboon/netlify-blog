@@ -1,0 +1,20 @@
+%ul
+  %li= link_to_url 'https://twitter.com/kuboon'
+  %li= link_to_url 'https://facebook.com/ohkubo.kohei'
+  %li= link_to_url ' https://jp.linkedin.com/in/kuboon'
+  %li= link_to_url ' http://blog.trick-with.net'
+  %li= link_to_url ' https://github.com/kuboon'
+  %li= link_to_url ' http://qiita.com/kuboon'
+  %li= link_to_url ' http://dev.trick-with.net'
+  %li= link_to_url ' https://coderwall.com/kuboon'
+  %li= link_to_url ' http://tv.magician.jp'
+
+%script{:src => "http://www.skypeassets.com/i/scom/js/skype-uri.js", :type => "text/javascript"}
+#SkypeButton_Call
+  :javascript
+    Skype.ui({
+      "name": "dropdown",
+      "element": "SkypeButton_Call",
+      "participants": ["tricky_kuboon"],
+      "imageSize": 32
+    });
