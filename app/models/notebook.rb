@@ -1,5 +1,5 @@
 class Notebook
-  ROOT = Pathname('/mnt/c/sync/Dropbox/アプリ/markdown/blog')
+  ROOT = Rails.root.join('markdown')
   def self.slug_hash
     @notes ||= begin
       ret = {}
